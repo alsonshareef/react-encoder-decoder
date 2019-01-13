@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Output from './output'
+// import {encoder, decoder} from '../chucknorris'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       inputText: "",
+      type: "",
       output: ""
     }
   }
@@ -16,7 +18,7 @@ class App extends Component {
   }
 
   // Makes this.state.output = inputText, and passes output to the Output component to display
-  handleClick = (e) => {
+  handleOutput = (e) => {
     e.preventDefault()
     this.setState({output: this.state.inputText})
   }
@@ -24,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div style={{textAlign: 'center'}}>
-        <h3>Input</h3>
+        <h3>Encode or Decode your messages below!</h3>
         <form>
           <textarea 
             style={{
@@ -35,8 +37,8 @@ class App extends Component {
             onChange={this.handleChange}
           />
           <div>
-            <button onClick={this.handleClick}>Encode</button>
-            <button onClick={this.handleClick}>Decode</button>
+            <button onClick={this.handleOutput}>Encode</button>
+            <button onClick={this.handleOutput}>Decode</button>
           </div>
         </form>
         <Output output={this.state.output}/>
