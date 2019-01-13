@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Output from './output'
-// import {encoder, decoder} from '../chucknorris'
+import {encoder, decoder} from '../chucknorris'
 
 class App extends Component {
   constructor(props){
@@ -17,10 +17,16 @@ class App extends Component {
     this.setState({inputText: e.target.value})
   }
 
-  // Makes this.state.output = inputText, and passes output to the Output component to display
-  handleOutput = (e) => {
+  // Makes this.state.inputText = encoded string, and makes output = inputText, and pass output to the Output component to display
+  handleEncode = (e) => {
     e.preventDefault()
-    this.setState({output: this.state.inputText})
+    this.setState({output: encoder(this.state.inputText)})
+  }
+
+  // Makes this.state.inputText = decoded string, and makes output = inputText, and pass output to the Output component to display
+  handleDecode = (e) => {
+    e.preventDefault()
+    this.setState({output: decoder(this.state.inputText)})
   }
 
   render() {
@@ -37,8 +43,8 @@ class App extends Component {
             onChange={this.handleChange}
           />
           <div>
-            <button onClick={this.handleOutput}>Encode</button>
-            <button onClick={this.handleOutput}>Decode</button>
+            <button onClick={this.handleEncode}>Encode</button>
+            <button onClick={this.handleDecode}>Decode</button>
           </div>
         </form>
         <Output output={this.state.output}/>

@@ -1,14 +1,14 @@
 // ENCODER
-exports.encoder = (codedString) => {
+exports.encoder = (string) => {
     let output = ''
     let numberAmount = 0
-    for( let i = 0; i < codedString.length; i++ ){
+    for( let i = 0; i < string.length; i++ ){
         if( i !== 0 ){
-            if( codedString[i] !== codedString[i-1] ){
+            if( string[i] !== string[i-1] ){
               let type = '', zeros = ''
               
               // Type
-                  if(codedString[i-1] === '0'){
+                  if(string[i-1] === '0'){
                     type = '00'
                 } else {
                     type = '0'
@@ -28,7 +28,7 @@ exports.encoder = (codedString) => {
    
     let type = '', zeros = ''
 
-    if(codedString[codedString.length - 1] === '0'){
+    if(string[string.length - 1] === '0'){
         type = '00'
     } else {
         type = '0'
