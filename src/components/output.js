@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Output(input) {
+export default function Output({output}) {
   return (
     <div>
-      <h3>Output</h3>
+      {output}
     </div>
   )
 }
