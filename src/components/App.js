@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   // Changes this.state.inputText to = the value in the textarea
-  handleChange = (e) => {
+  handleInput = (e) => {
     this.setState({inputText: e.target.value})
   }
 
@@ -38,9 +38,10 @@ class App extends Component {
             style={{
               width: 300,
               height: 70
-            }} 
+            }}
+            value={this.state.inputText} 
             placeholder='Please enter what you would like to encode or decode.'
-            onChange={this.handleChange}
+            onChange={this.handleInput}
           />
           <div>
             <button onClick={this.handleEncode}>Encode</button>
