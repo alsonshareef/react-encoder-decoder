@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Output from './output'
-import {encoder, decoder} from '../chucknorris'
+import {fullEncoder, fullDecoder} from '../chucknorris'
 
 class App extends Component {
   constructor(props){
@@ -20,13 +20,13 @@ class App extends Component {
   // Makes this.state.inputText = encoded string, and makes output = inputText, and pass output to the Output component to display
   handleEncode = (e) => {
     e.preventDefault()
-    this.setState({output: encoder(this.state.inputText)})
+    this.setState({output: fullEncoder(this.state.inputText)})
   }
 
   // Makes this.state.inputText = decoded string, and makes output = inputText, and pass output to the Output component to display
   handleDecode = (e) => {
     e.preventDefault()
-    this.setState({output: decoder(this.state.inputText)})
+    this.setState({output: fullDecoder(this.state.inputText)})
   }
 
   render() {
