@@ -1,8 +1,7 @@
+let encodeMap = require('./encoding-map')
+
 const mapEncoder = (message) => {
     let output = ''
-    let encodeMap = {
-        
-    }
 
     for(let i = 0; i < message.length; i++){
         output += encodeMap[message[i]]
