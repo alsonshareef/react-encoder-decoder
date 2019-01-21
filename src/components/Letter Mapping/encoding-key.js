@@ -1,4 +1,4 @@
-const encodeMap = {
+const encodeKey = {
     a: 1,
     b: 2,
     c: 3,
@@ -84,4 +84,4 @@ const encodeMap = {
     '|' : 92
 }
 
-module.exports = encodeMap
+module.exports = encodeKey

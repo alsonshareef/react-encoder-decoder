@@ -1,13 +1,13 @@
-let encodeMap = require('./encoding-map')
+let encodeKey = require('./encoding-key')
 
 const mapEncoder = (message) => {
     let output = ''
 
     for(let i = 0; i < message.length; i++){
-        output += encodeMap[message[i]]
+        output += encodeKey[message[i]]
     }
 
     return output
 }
 
-console.log(mapEncoder())
+console.log(mapEncoder('Hey'))
