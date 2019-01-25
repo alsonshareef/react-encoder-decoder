@@ -64,5 +64,6 @@ const starDot = (message) => {
     return output
 }
 
-// BUG: FIGURE OUT WHY THEYRE SO MANY DOTS (BINARY FUNCTION)
+// BUG: FIGURE OUT WHY THEYRE SO MANY DOTS (BINARY FUNCTION) :
+        // the 'number' variable hits 0 before loop has finished, making the rest of the loop with number variable = 0 add '0' to the end of binaryNum
 console.log(starDot('Hi, my name is Alson'))
