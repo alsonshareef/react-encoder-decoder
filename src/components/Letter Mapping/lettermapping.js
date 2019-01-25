@@ -1,4 +1,4 @@
-let encodeKey = require('./encoding-key')
+let encodeKey = require('./encoding-key-LM')
 
 const mapEncoder = (message) => {
     let output = ''

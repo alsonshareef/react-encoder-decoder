@@ -11,7 +11,7 @@ const numbertoBinary = (number) => {
     }
 
     for (let i = 0; i <= index; i++){
-        // if (number !== 0) {
+        if (number !== 0) {
             if (number >= operator) {
                 binaryNum += '1'
                 number -= operator
@@ -19,14 +19,14 @@ const numbertoBinary = (number) => {
                 binaryNum += '0'
             }
             operator /= 2
-        // }
+        }
         
-        console.log('iteration:', i)
-        console.log('index:', index)
-        console.log('binaryNum:', binaryNum)
-        console.log('number', number)
-        console.log('operator:', operator)
-        console.log('\n')
+        // console.log('iteration:', i)
+        // console.log('index:', index)
+        // console.log('binaryNum:', binaryNum)
+        // console.log('number', number)
+        // console.log('operator:', operator)
+        // console.log('\n')
     }
     
     
@@ -66,4 +66,4 @@ const starDot = (message) => {
 
 // BUG: FIGURE OUT WHY THEYRE SO MANY DOTS (BINARY FUNCTION) :
         // the 'number' variable hits 0 before loop has finished, making the rest of the loop with number variable = 0 add '0' to the end of binaryNum
-console.log(starDot('Hi, my name is Alson'))
+console.log(starDot('Hi, my name is Alson '))
