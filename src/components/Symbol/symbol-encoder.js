@@ -55,6 +55,31 @@ let encodeKeyRLM = require('./encoding-key-symbol')
             return bin
         }
 
+    // Convert Binary String to Binary Array 
+        const convertBinarytoBinaryArray = (binary) => {
+            let output = []
+            let binArray = binary.split('')
+            let iterations = binArray.length
+
+            for (let i = 0; i < iterations / 4; i++) {
+                if (binArray.length > 4){
+                    let index = binArray.length - 4
+                    output.push(binArray.splice(index, 4).join(''))
+                }
+            }
+
+            let size = 4 - binArray.length
+            let binOut = binArray.join('')
+
+            for(let i = 0; i < size; i++){
+                binOut += '0'
+            }
+
+            output.push(binOut)
+
+            return output
+        }
+
 // ** MAIN ENCODER FUNCTION ** //
 
 const symbolEncoder = (message) => {
@@ -66,10 +91,11 @@ const symbolEncoder = (message) => {
 
     // Multiplied Ascii Number >> Binary 
         let asciiInBinary = convertNumberToBinary(multipliedAscii)
-        console.log(asciiInBinary)
+        // console.log(asciiInBinary)
 
     // Binary >> Binary Array of strings at length of 4
-
+        let asciiBinArray = convertBinarytoBinaryArray(asciiInBinary)
+        console.log(asciiBinArray)
     // Binary >> Symbol
 }
 
