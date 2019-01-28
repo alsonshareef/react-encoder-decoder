@@ -1,4 +1,4 @@
-const encodeKeyRLM = {
+const RLMKey = {
     a: 'p',
     b: 'o',
     c: 'i',
@@ -84,4 +84,4 @@ const encodeKeyRLM = {
     // '|' : 92
 }
 
-module.exports = encodeKeyRLM
+module.exports = RLMKey

@@ -80,5 +80,5 @@
         1st Algo: Map letters (COMPLETED)
         2nd Algo: Turn message to Ascii >> Multiply by 2 (COMPLETED)
         3rd Algo: Ascii >> Binary >> Type and Num >> * and . (ALMOST DONE)
-        4th Algo: Maps to Random Letters >> Generate Ascii Code and Multiply * PI/SQRT(64) >> Binary >> Symbol (ONLY BINARY ARRAY AND SYMBOL ENCODING LEFT)
+        4th Algo: Maps to Random Letters >> Generate Ascii Code and Multiply * PI/SQRT(64) >> Binary >> Symbol (COMPLETED)
     */

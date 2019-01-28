@@ -1,4 +1,5 @@
-let encodeKeyRLM = require('./encoding-key-symbol')
+let RLMKey = require('./RLM-key')
+let symbolKey = require('./Symbol-key')
 
 // RELEVANT FUNCTIONS FOR ENCODER FUNCTION
     // Generates random letter string based on passed in message
@@ -6,7 +7,7 @@ let encodeKeyRLM = require('./encoding-key-symbol')
             let output = ''
 
             for(let i = 0; i < message.length; i++){
-                output += encodeKeyRLM[message[i]]
+                output += RLMKey[message[i]]
             }
 
             return output
@@ -80,6 +81,19 @@ let encodeKeyRLM = require('./encoding-key-symbol')
             return output
         }
 
+    // Convert Binary Array into Symbol Encoded Message
+        const encodeToSymbol = (binArray) => {
+            let output = ''
+
+            for(let i = 0; i < binArray.length; i++){
+                output += symbolKey[binArray[i]]
+            }
+
+            return output
+        }
+
+
+
 // ** MAIN ENCODER FUNCTION ** //
 
 const symbolEncoder = (message) => {
@@ -90,13 +104,15 @@ const symbolEncoder = (message) => {
         let multipliedAscii = multiplyAscii(randomLetters)
 
     // Multiplied Ascii Number >> Binary 
-        let asciiInBinary = convertNumberToBinary(multipliedAscii)
-        // console.log(asciiInBinary)
+        let asciiBinaryNum = convertNumberToBinary(multipliedAscii)
 
     // Binary >> Binary Array of strings at length of 4
-        let asciiBinArray = convertBinarytoBinaryArray(asciiInBinary)
-        console.log(asciiBinArray)
+        let asciiBinArray = convertBinarytoBinaryArray(asciiBinaryNum)
+        // console.log(asciiBinArray)
     // Binary >> Symbol
+        let symbolEncoded = encodeToSymbol(asciiBinArray)
+    
+    return symbolEncoded
 }
 
-symbolEncoder('Hey how are you my name is alson')
+console.log(symbolEncoder('Hey my name is Alson'))
