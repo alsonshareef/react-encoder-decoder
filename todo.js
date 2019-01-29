@@ -81,11 +81,17 @@
         2nd Algo: Turn message to Ascii >> Multiply by 2 (COMPLETED)
         3rd Algo: Ascii >> Binary >> Type and Num >> * and . (ALMOST DONE)
         4th Algo: Maps to Random Letters >> Generate Ascii Code and Multiply * PI/SQRT(64) >> Binary >> Symbol (COMPLETED)
+        
+        ** WRITE TESTS FOR:
+            Chuck Norris (COMPLETED)
+            Letter Mapping
+            Multiply-Ascii
+            Star-and-Dot
+            Symbol
 
         ** Also look at: 
             Better way to import encoding keys for symbol encoder
             Star-Dot potential bug : There are so many dots; the 'number' variable hits 0 before loop has finished,
              making the rest of the loop with number variable = 0 add '0' to the end of binaryNum
 
-        ** WRITE TESTS FOR EVERYTHING
     */
