@@ -157,7 +157,7 @@ const decoder = (encodedString) => {
 
 
 // ENCODER
-exports.fullEncoder = (string) => {
+const fullEncoder = (string) => {
     // Convert String >> Ascii
         let asciiCodeArray = convertStringToAsciiCode(string)
     // Ascii >> Binary
@@ -180,12 +180,14 @@ exports.fullEncoder = (string) => {
     // Byte Array String >> Encode
         let encodedString = encoder(byteString)    
 
+        encodedString = encodedString.trim()
+
         return encodedString
 }
 
 
 // // DECODER
-exports.fullDecoder = (encodedString) => {
+const fullDecoder = (encodedString) => {
     // Encoded String => Decoder
     let decodedString = decoder(encodedString)
 
@@ -206,7 +208,9 @@ exports.fullDecoder = (encodedString) => {
         decodedMessage.push(convertAsciiCodeToString(asciiCodefromDecode[i]))
     }
 
-    decodedMessage = decodedMessage.join('')
+    decodedMessage = decodedMessage.join('').trim()
 
     return decodedMessage
 }
+
+module.exports = {fullEncoder, fullDecoder}
