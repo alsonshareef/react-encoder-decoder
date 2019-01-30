@@ -81,7 +81,8 @@ const encodeKey = {
     '>' : 89,
     '/' : 90,
     '?' : 91,
-    '|' : 92
+    '|' : 92,
+    ',' : 93
 }
 
 module.exports = encodeKey

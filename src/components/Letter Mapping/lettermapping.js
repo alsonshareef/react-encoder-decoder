@@ -10,4 +10,6 @@ const mapEncoder = (message) => {
     return output
 }
 
-console.log(mapEncoder('Hey'))
+// console.log(mapEncoder('Hi, my name is Alson'))
+
+module.exports = {mapEncoder}
