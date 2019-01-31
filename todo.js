@@ -79,12 +79,12 @@
     /*
         1st Algo: Map letters (COMPLETED)
         2nd Algo: Turn message to Ascii >> Multiply by 2 (COMPLETED)
-        3rd Algo: Ascii >> Binary >> Type and Num >> * and . (ALMOST DONE)
+        3rd Algo: Ascii >> Binary >> Type and Num >> * and . (COMPLETED, but confirm with naanu)
         4th Algo: Maps to Random Letters >> Generate Ascii Code and Multiply * PI/SQRT(64) >> Binary >> Symbol (COMPLETED)
         
         ** WRITE TESTS FOR:
             Chuck Norris (COMPLETED)
-            Letter Mapping
+            Letter Mapping (COMPLETED)
             Multiply-Ascii
             Star-and-Dot
             Symbol

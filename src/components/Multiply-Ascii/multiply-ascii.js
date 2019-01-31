@@ -8,4 +8,6 @@ const multiplyAscii = (message) => {
     return output
 }
 
-// console.log(multiplyAscii('Alson'))
+// console.log(multiplyAscii('Hi, my name is Alson'))
+
+module.exports = {multiplyAscii}
