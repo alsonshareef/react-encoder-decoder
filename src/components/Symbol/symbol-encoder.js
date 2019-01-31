@@ -1,7 +1,7 @@
 let RLMKey = require('./RLM-key')
 let symbolKey = require('./Symbol-key')
 
-// RELEVANT FUNCTIONS FOR ENCODER FUNCTION
+// RELEVANT FUNCTIONS FOR SYMBOL ENCODER FUNCTION
     // Generates random letter string based on passed in message
         const randomLetterEncoder = (message) => {
             let output = ''
@@ -13,7 +13,7 @@ let symbolKey = require('./Symbol-key')
             return output
         }
 
-    // Finds ascii code for each random letter, multiplies by , and returns a string of all the numbers combined
+    // Finds ascii code for each random letter, multiplies by '(Math.PI/Math.sqrt(64))', and returns a string of all the numbers combined
         const multiplyAscii = (message) => {
             let output = []
             for(let i = 0; i < message.length; i++){
@@ -115,4 +115,6 @@ const symbolEncoder = (message) => {
     return symbolEncoded
 }
 
-console.log(symbolEncoder('Hey my name is Alson'))
+// console.log(symbolEncoder('Hey my name is Alson'))
+
+module.exports = {symbolEncoder}
