@@ -94,4 +94,8 @@
             Star-Dot potential bug : There are so many dots; the 'number' variable hits 0 before loop has finished,
              making the rest of the loop with number variable = 0 add '0' to the end of binaryNum
 
+        ** UI
+            Start integrating all the encoder functions into the UI:
+                - Drop down box to select encoder, and then displays textarea for selected encoder
+
     */

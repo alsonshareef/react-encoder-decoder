@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Output from './output'
-const { fullEncoder, fullDecoder } = require('./Chuck Norris/chucknorris')
+const { fullEncoder, fullDecoder } = require('../encoders/Chuck Norris/chucknorris')
 
 class App extends Component {
   constructor(props){
