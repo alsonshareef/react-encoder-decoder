@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Output from './output'
+import Dropdown from './Dropdown'
+import Output from './Output'
 const { fullEncoder, fullDecoder } = require('../encoders/Chuck Norris/chucknorris')
 
 class App extends Component {
@@ -7,8 +8,39 @@ class App extends Component {
     super(props)
     this.state = {
       inputText: "",
-      type: "",
-      output: ""
+      output: "",
+      encoders: [
+        {
+            id: 0,
+            title: 'Chuck Norris',
+            selected: false,
+            key: 'encoder'
+        },
+        {
+          id: 1,
+          title: 'Letter Mapping',
+          selected: false,
+          key: 'encoder'
+        },
+        {
+          id: 2,
+          title: 'Multiply-Ascii',
+          selected: false,
+          key: 'encoder'
+        },
+        {
+          id: 3,
+          title: 'Star and Dots',
+          selected: false,
+          key: 'encoder'
+        },
+        {
+          id: 4,
+          title: 'Symbol',
+          selected: false,
+          key: 'encoder'
+        },
+      ]
     }
   }
 
@@ -32,7 +64,10 @@ class App extends Component {
   render() {
     return (
       <div style={{textAlign: 'center'}}>
-        <h3>Encode or Decode your messages below!</h3>
+        <h2>Encode or Decode your messages below!</h2>
+        <Dropdown 
+          encoders={this.state.encoders}
+        />
         <form>
           <textarea 
             style={{

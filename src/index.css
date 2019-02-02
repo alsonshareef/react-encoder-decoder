@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.dd-list {
+  padding-inline-start: 0px;
+  margin-top: 0;
+}
+
+.dd-header {
+  padding-bottom: 15px
+}
