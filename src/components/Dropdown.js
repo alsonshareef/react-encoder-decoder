@@ -15,7 +15,7 @@ export default class Dropdown extends Component {
   }
 
   render(){
-    const {encoders} = this.props
+    const {encoders, toggleSelected} = this.props
     const {listOpen} = this.state
 
     return (
@@ -26,13 +26,16 @@ export default class Dropdown extends Component {
             </button>
         </div>
         {
-          listOpen && <ul className="dd-list" style={{listStyle: 'none'}}>
+          listOpen ? 
+          <ul className="dd-list" style={{listStyle: 'none'}}>
             {
               encoders.map((item) => (
-              <li className="dd-list-item" key={item.id} >{item.title}</li>
+                <li className="dd-list-item" key={item.id} onClick={() => toggleSelected(item.id, item.key)}>{item.title} {item.selected && 'i am selected'}</li>
               ))
             }
           </ul>
+          :
+          null
         }
       </div>
     )

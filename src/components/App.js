@@ -11,37 +11,46 @@ class App extends Component {
       output: "",
       encoders: [
         {
-            id: 0,
-            title: 'Chuck Norris',
-            selected: false,
-            key: 'encoder'
+          id: 0,
+          title: 'Chuck Norris',
+          selected: false,
+          key: 'encoders'
         },
         {
           id: 1,
           title: 'Letter Mapping',
           selected: false,
-          key: 'encoder'
+          key: 'encoders'
         },
         {
           id: 2,
           title: 'Multiply-Ascii',
           selected: false,
-          key: 'encoder'
+          key: 'encoders'
         },
         {
           id: 3,
           title: 'Star and Dots',
           selected: false,
-          key: 'encoder'
+          key: 'encoders'
         },
         {
           id: 4,
           title: 'Symbol',
           selected: false,
-          key: 'encoder'
+          key: 'encoders'
         },
       ]
     }
+  }
+
+  // Will toggle the clicked list items 'selected' property between true and false
+  toggleSelected = (id, key) => {
+    let temp = this.state[key]
+    temp[id].selected = !temp[id].selected
+    this.setState({
+      [key]: temp
+    })
   }
 
   // Changes this.state.inputText to = the value in the textarea
@@ -67,6 +76,7 @@ class App extends Component {
         <h2>Encode or Decode your messages below!</h2>
         <Dropdown 
           encoders={this.state.encoders}
+          toggleSelected={this.toggleSelected}
         />
         <form>
           <textarea 
