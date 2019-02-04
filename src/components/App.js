@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dropdown from './Dropdown'
 import Output from './Output'
+import TextareaAutosize from 'react-autosize-textarea'; // A textarea which will resize automatically depending on the amount of content in it
 const { fullEncoder, fullDecoder } = require('../encoders/Chuck Norris/chucknorris')
 
 class App extends Component {
@@ -79,15 +80,12 @@ class App extends Component {
           toggleSelected={this.toggleSelected}
         />
         <form>
-          <textarea 
-            style={{
-              width: 300,
-              height: 70
-            }}
+          <TextareaAutosize 
+            className="textarea"
             value={this.state.inputText} 
-            placeholder='Please enter what you would like to encode or decode.'
+            placeholder='Please enter the message that you would like to encode or decode.'
             onChange={this.handleInput}
-          />
+          />  
           <div>
             <button onClick={this.handleEncode}>Encode</button>
             <button onClick={this.handleDecode}>Decode</button>

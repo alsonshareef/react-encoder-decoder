@@ -13,11 +13,20 @@ code {
     monospace;
 }
 
-.dd-list {
-  padding-inline-start: 0px;
-  margin-top: 0;
-}
+/* CUSTOM CSS */
 
-.dd-header {
-  padding-bottom: 15px
-}
+  /* Dropdown menu */
+    .dd-list {
+      padding-inline-start: 0px;
+      margin-top: 0;
+    }
+
+    .dd-header {
+      padding-bottom: 15px
+    }
+  
+  /* Textareas for input and output */
+    .textarea {
+      width: 400px;
+      height: 100px;
+    }
