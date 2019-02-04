@@ -5,7 +5,7 @@ export default function Output({output}) {
   return (
     <div>
       <TextareaAutosize
-        className="textarea"
+        className="textarea-output"
         placeholder="The encoded or decoded output will appear here."
         value={output} 
         readOnly

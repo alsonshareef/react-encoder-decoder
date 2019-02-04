@@ -30,7 +30,7 @@ export default class Dropdown extends Component {
           <ul className="dd-list" style={{listStyle: 'none'}}>
             {
               encoders.map((item) => (
-                <li className="dd-list-item" key={item.id} onClick={() => toggleSelected(item.id, item.key)}>{item.title} {item.selected && 'i am selected'}</li>
+                <li className="dd-list-item" key={item.id} onClick={() => toggleSelected(item.id, item.key)}><button>{item.title} {item.selected && <i className="fas fa-check"></i>}</button></li>
               ))
             }
           </ul>

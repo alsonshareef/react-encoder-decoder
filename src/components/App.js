@@ -81,14 +81,14 @@ class App extends Component {
         />
         <form>
           <TextareaAutosize 
-            className="textarea"
+            className="textarea-input"
             value={this.state.inputText} 
             placeholder='Please enter the message that you would like to encode or decode.'
             onChange={this.handleInput}
           />  
           <div>
-            <button onClick={this.handleEncode}>Encode</button>
-            <button onClick={this.handleDecode}>Decode</button>
+            <button className="buttons" onClick={this.handleEncode}>Encode</button>
+            <button className="buttons" onClick={this.handleDecode}>Decode</button>
           </div>
         </form>
         <Output output={this.state.output}/>
