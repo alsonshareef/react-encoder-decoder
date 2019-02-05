@@ -153,11 +153,11 @@ const decoder = (encodedString) => {
 }
 
 
+
 // **** MAIN ENCODER AND DECODER FUNCTION ****
 
-
 // ENCODER
-const fullEncoder = (string) => {
+const chuckEncoder = (string) => {
     // Convert String >> Ascii
         let asciiCodeArray = convertStringToAsciiCode(string)
     // Ascii >> Binary
@@ -187,7 +187,7 @@ const fullEncoder = (string) => {
 
 
 // // DECODER
-const fullDecoder = (encodedString) => {
+const chuckDecoder = (encodedString) => {
     // Encoded String => Decoder
     let decodedString = decoder(encodedString)
 
@@ -213,4 +213,4 @@ const fullDecoder = (encodedString) => {
     return decodedMessage
 }
 
-module.exports = {fullEncoder, fullDecoder}
+module.exports = {chuckEncoder, chuckDecoder}

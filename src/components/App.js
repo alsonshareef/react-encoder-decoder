@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Dropdown from './Dropdown'
 import Output from './Output'
 import TextareaAutosize from 'react-autosize-textarea'; // A textarea which will resize automatically depending on the amount of content in it
-const { fullEncoder, fullDecoder } = require('../encoders/Chuck Norris/chucknorris')
+import selectEncoder from './selectEncoder'
 
 class App extends Component {
   constructor(props){
@@ -41,16 +41,50 @@ class App extends Component {
           selected: false,
           key: 'encoders'
         },
-      ]
+      ],
+      decoders: [
+        {
+          id: 0,
+          title: 'Chuck Norris',
+          selected: false,
+          key: 'decoders'
+        },
+        {
+          id: 1,
+          title: 'Letter Mapping',
+          selected: false,
+          key: 'decoders'
+        },
+        {
+          id: 2,
+          title: 'Multiply-Ascii',
+          selected: false,
+          key: 'decoders'
+        },
+        {
+          id: 3,
+          title: 'Star and Dots',
+          selected: false,
+          key: 'decoders'
+        },
+        {
+          id: 4,
+          title: 'Symbol',
+          selected: false,
+          key: 'decoders'
+        },
+      ],
+      selectedMethod: null
     }
   }
 
-  // Will toggle the clicked list items 'selected' property between true and false
+  // Will use the 'key' property to identify the list item state variable, then use 'id' to access the 'selected' property of selected li, and toggle it between true and false 
   toggleSelected = (id, key) => {
     let temp = this.state[key]
     temp[id].selected = !temp[id].selected
     this.setState({
-      [key]: temp
+      [key]: temp,
+      selectedMethod: this.state[key][id].title
     })
   }
 
@@ -62,13 +96,13 @@ class App extends Component {
   // Makes this.state.inputText = encoded string, and makes output = inputText, and pass output to the Output component to display
   handleEncode = (e) => {
     e.preventDefault()
-    this.setState({output: fullEncoder(this.state.inputText)})
+    this.setState({output: selectEncoder(this.state.selectedMethod, this.state.inputText)})
   }
 
   // Makes this.state.inputText = decoded string, and makes output = inputText, and pass output to the Output component to display
   handleDecode = (e) => {
     e.preventDefault()
-    this.setState({output: fullDecoder(this.state.inputText)})
+    this.setState({output: selectEncoder(this.state.selectedMethod, this.state.inputText)})
   }
 
   render() {
@@ -77,6 +111,7 @@ class App extends Component {
         <h2>Encode or Decode your messages below!</h2>
         <Dropdown 
           encoders={this.state.encoders}
+          decoders={this.state.decoders}
           toggleSelected={this.toggleSelected}
         />
         <form>

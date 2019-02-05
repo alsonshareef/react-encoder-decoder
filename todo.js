@@ -97,6 +97,9 @@
         ** UI
             Start integrating all the encoder functions into the UI:
                 - Create dropdown menu with selection functionality (COMPLETED)
-                - Start working on main component with 2 textareas for input/output, and connect dropdown menu selection to respective encoder/decoder functions
+                - Start working on main component:
+                    - Add 2 textareas for input/output (COMPLETED)
+                    - Write function to set selected encoder/decoder function to handleEncode and handleDecode methods
+                        - Finish writing logic for selectEncoder
 
     */

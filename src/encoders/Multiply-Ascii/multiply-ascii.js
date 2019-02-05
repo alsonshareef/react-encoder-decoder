@@ -1,4 +1,4 @@
-const multiplyAscii = (message) => {
+const multiplyAsciiEncode = (message) => {
     let output = []
     for(let i = 0; i < message.length; i++){
         let num = message[i].charCodeAt()
@@ -8,6 +8,6 @@ const multiplyAscii = (message) => {
     return output
 }
 
-// console.log(multiplyAscii('Hi, my name is Alson'))
+// console.log(multiplyAsciiEncode('Hi, my name is Alson'))
 
-module.exports = {multiplyAscii}
+module.exports = {multiplyAsciiEncode}

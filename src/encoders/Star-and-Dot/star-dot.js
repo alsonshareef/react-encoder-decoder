@@ -35,7 +35,7 @@
 
 // ** MAIN ENCODER FUNCTION ** //
 
-const starDot = (message) => {
+const starDotEncode = (message) => {
     // Message >> Ascii
     let asciiString = ''
 
@@ -60,6 +60,6 @@ const starDot = (message) => {
     return output
 }
 
-// console.log(starDot('Hi, my name is Alson'))
+// console.log(starDotEncode('Hi, my name is Alson'))
 
-module.exports = { starDot }
+module.exports = { starDotEncode }
