@@ -19,6 +19,7 @@ code {
     .dd-list {
       padding-inline-start: 0px;
       margin-top: 0;
+      list-style: none;
     }
 
     .dd-wrapper {

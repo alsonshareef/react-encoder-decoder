@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import Dropdown from './Dropdown'
 import Output from './Output'
 import TextareaAutosize from 'react-autosize-textarea'; // A textarea which will resize automatically depending on the amount of content in it
-import selectEncoder from './selectEncoder'
+import { selectEncoder, selectDecoder } from './selectEncoder'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
+      selectedItem: null,
       inputText: "",
       output: "",
       encoders: [
@@ -73,8 +74,7 @@ class App extends Component {
           selected: false,
           key: 'decoders'
         },
-      ],
-      selectedMethod: null
+      ]
     }
   }
 
@@ -84,7 +84,7 @@ class App extends Component {
     temp[id].selected = !temp[id].selected
     this.setState({
       [key]: temp,
-      selectedMethod: this.state[key][id].title
+      selectedItem: this.state[key][id]
     })
   }
 
@@ -96,13 +96,13 @@ class App extends Component {
   // Makes this.state.inputText = encoded string, and makes output = inputText, and pass output to the Output component to display
   handleEncode = (e) => {
     e.preventDefault()
-    this.setState({output: selectEncoder(this.state.selectedMethod, this.state.inputText)})
+    this.setState({output: selectEncoder(this.state.selectedItem, this.state.inputText)})
   }
 
   // Makes this.state.inputText = decoded string, and makes output = inputText, and pass output to the Output component to display
   handleDecode = (e) => {
     e.preventDefault()
-    this.setState({output: selectEncoder(this.state.selectedMethod, this.state.inputText)})
+    this.setState({output: selectDecoder(this.state.selectedItem, this.state.inputText)})
   }
 
   render() {

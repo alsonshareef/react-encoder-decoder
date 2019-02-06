@@ -99,7 +99,7 @@
                 - Create dropdown menu with selection functionality (COMPLETED)
                 - Start working on main component:
                     - Add 2 textareas for input/output (COMPLETED)
-                    - Write function to set selected encoder/decoder function to handleEncode and handleDecode methods
-                        - Finish writing logic for selectEncoder
+                    - Write function to set selected encoder/decoder function to handleEncode and handleDecode methods (COMPLETED)
+                    - Make drop down menu to only allow one selected item at a time
 
     */

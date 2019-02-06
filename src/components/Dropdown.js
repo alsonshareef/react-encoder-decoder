@@ -35,7 +35,7 @@ export default class Dropdown extends Component {
           </div>
           {
             encodeListOpen ? 
-            <ul className="dd-list" style={{listStyle: 'none'}}>
+            <ul className="dd-list">
               {
                 encoders.map((item) => (
                   <li className="dd-list-item" key={item.id} onClick={() => toggleSelected(item.id, item.key)}><button>{item.title} {item.selected && <i className="fas fa-check"></i>}</button></li>
@@ -55,7 +55,7 @@ export default class Dropdown extends Component {
           </div>
           {
             decodeListOpen ? 
-            <ul className="dd-list" style={{listStyle: 'none'}}>
+            <ul className="dd-list">
               {
                 decoders.map((item) => (
                   <li className="dd-list-item" key={item.id} onClick={() => toggleSelected(item.id, item.key)}><button>{item.title} {item.selected && <i className="fas fa-check"></i>}</button></li>
