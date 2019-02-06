@@ -13,18 +13,24 @@ const selectEncoder = (selectedItem, inputText) => {
     if (selectedItem === null) {
         output = 'Please select an encoder or decoder to run your message through.'
     } else {
-        if (selectedItem.selected === true && selectedItem.title === 'Chuck Norris') {
-            output = chuckEncoder(inputText)
-        } else if (selectedItem.selected === true && selectedItem.title === 'Letter Mapping') {
-            output = mapEncoder(inputText)
-        } else if (selectedItem.selected === true && selectedItem.title === 'Multiply-Ascii') {
-            output = multiplyAsciiEncode(inputText)
-        } else if (selectedItem.selected === true && selectedItem.title === 'Star and Dots') {
-            output = starDotEncode(inputText)
-        } else if (selectedItem.selected === true && selectedItem.title === 'Symbol') {
-            output = symbolEncoder(inputText)
+        let {key, selected, title} = selectedItem
+
+        if (key === 'decoders') {
+            output = 'You have selected a decoder, please press the "Decode" button instead.'
         } else {
-            output = 'You have no encoder or decoder selected, please select one.'
+            if (selected === true && title === 'Chuck Norris') {
+                output = chuckEncoder(inputText)
+            } else if (selected === true && title === 'Letter Mapping') {
+                output = mapEncoder(inputText)
+            } else if (selected === true && title === 'Multiply-Ascii') {
+                output = multiplyAsciiEncode(inputText)
+            } else if (selected === true && title === 'Star and Dots') {
+                output = starDotEncode(inputText)
+            } else if (selected === true && title === 'Symbol') {
+                output = symbolEncoder(inputText)
+            } else {
+                output = 'You have no encoder or decoder selected, please select one.'
+            }
         }
     }
     
@@ -32,23 +38,29 @@ const selectEncoder = (selectedItem, inputText) => {
 }
 
 const selectDecoder = (selectedItem, inputText) => {
-    let output = ''
+    let output;
     
     if (selectedItem === null) {
         output = 'Please select an encoder or decoder to run your message through.'
     } else {
-        if (selectedItem.selected === true && selectedItem.title === 'Chuck Norris') {
-            output = chuckDecoder(inputText)
-        } // else if (selectedItem.selected === true && selectedItem.title === 'Letter Mapping') {
-        //     output = mapDecoder(inputText)
-        // } else if (selectedItem.selected === true && selectedItem.title === 'Multiply-Ascii') {
-        //     output = multiplyAsciiDecode(inputText)
-        // } else if (selectedItem.selected === true && selectedItem.title === 'Star and Dots') {
-        //     output = starDotDecode(inputText)
-        // } else if (selectedItem.selected === true && selectedItem.title === 'Symbol') {
-        //     output = symbolDecoder(inputText)
-        else {
-            output = 'You have no encoder or decoder selected, please select one.'
+        let {key, selected, title} = selectedItem
+
+        if (key === 'encoders') {
+            output = 'You have selected an encoder, please press the "Encode" button instead'
+        } else {
+            if (selected === true && title === 'Chuck Norris') {
+                output = chuckDecoder(inputText)
+            } // else if (selected === true && title === 'Letter Mapping') {
+            //     output = mapDecoder(inputText)
+            // } else if (selected === true && title === 'Multiply-Ascii') {
+            //     output = multiplyAsciiDecode(inputText)
+            // } else if (selected === true && title === 'Star and Dots') {
+            //     output = starDotDecode(inputText)
+            // } else if (selected === true && title === 'Symbol') {
+            //     output = symbolDecoder(inputText)
+            else {
+                output = 'You have no encoder or decoder selected, please select one.'
+            }
         }
     }
 

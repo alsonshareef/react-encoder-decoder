@@ -27,6 +27,7 @@ export default class Dropdown extends Component {
 
     return (
       <div className="dd-wrapper">
+        {/* Encoder List */}
         <div className="dd-encoder-list">
           <div className="dd-header" >
               <button className="dd-list-button" onClick={() => this.toggleEncodeList()}>
@@ -47,6 +48,7 @@ export default class Dropdown extends Component {
           }
         </div>
 
+        {/* Decoder List */}
         <div className="dd-decoder-list">
           <div className="dd-header" >
               <button className="dd-list-button" onClick={() => this.toggleDecodeList()}>
