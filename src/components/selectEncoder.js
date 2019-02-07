@@ -1,9 +1,9 @@
 // Encoders and Decoders
-const { chuckEncoder, chuckDecoder } = require('../encoders/Chuck Norris/chucknorris')
-const { mapEncoder } = require('../encoders/Letter Mapping/lettermapping')
-const { multiplyAsciiEncode } = require('../encoders/Multiply-Ascii/multiply-ascii')
-const { starDotEncode } = require('../encoders/Star-and-Dot/star-dot')
-const { symbolEncoder } = require('../encoders/Symbol/symbol-encoder')
+const { chuckEncoder, chuckDecoder } = require('../encoders-decoders/Chuck Norris/chucknorris')
+const { mapEncoder } = require('../encoders-decoders/Letter Mapping/lettermapping')
+const { multiplyAsciiEncode } = require('../encoders-decoders/Multiply-Ascii/multiply-ascii')
+const { starDotEncode } = require('../encoders-decoders/Star-and-Dot/star-dot')
+const { symbolEncoder } = require('../encoders-decoders/Symbol/symbol-encoder')
 
 
 // *** SELECTING FUNCTION *** //

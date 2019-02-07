@@ -100,6 +100,7 @@
                 - Start working on main component:
                     - Add 2 textareas for input/output (COMPLETED)
                     - Write function to set selected encoder/decoder function to handleEncode and handleDecode methods (COMPLETED)
+                    
                     - Make drop down menu to only allow one selected item at a time
                     - Finish writing the rest of the decoding functions, and write their tests and pass into UI
                     - Try make a copy to clipboard functionality for easier UX
