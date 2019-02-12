@@ -1,5 +1,6 @@
 let {encodeKey, decodeKey} = require('./encoding-key-LM')
 
+// ENCODER
 const mapEncoder = (message) => {
     let output = ''
 
@@ -11,8 +12,10 @@ const mapEncoder = (message) => {
     return output
 }
 
-// console.log(mapEncoder('Hi, my name is Alson'))
+// console.log('Encoded:', mapEncoder('Hi, my name is Alson'))
 
+
+// DECODER
 const mapDecoder = (encodedString) => {
     let tempNum = '', output = '';
 
@@ -28,6 +31,6 @@ const mapDecoder = (encodedString) => {
     return output
 }
 
-// console.log(mapDecoder('34,5,25,84,53,13,25,53,14,1,13,5,53,9,19,53,27,12,19,15,14,'))
+// console.log('Decoded:', mapDecoder('34,5,25,84,53,13,25,53,14,1,13,5,53,9,19,53,27,12,19,15,14,'))
 
 module.exports = {mapEncoder, mapDecoder}
