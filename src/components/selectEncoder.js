@@ -1,7 +1,7 @@
 // Encoders and Decoders
 const { chuckEncoder, chuckDecoder } = require('../encoders-decoders/Chuck Norris/chucknorris')
 const { mapEncoder, mapDecoder } = require('../encoders-decoders/Letter Mapping/lettermapping')
-const { multiplyAsciiEncode } = require('../encoders-decoders/Multiply-Ascii/multiply-ascii')
+const { multiplyAsciiEncode, multiplyAsciiDecode } = require('../encoders-decoders/Multiply-Ascii/multiply-ascii')
 const { starDotEncode } = require('../encoders-decoders/Star-and-Dot/star-dot')
 const { symbolEncoder } = require('../encoders-decoders/Symbol/symbol-encoder')
 
@@ -52,9 +52,9 @@ const selectDecoder = (selectedItem, inputText) => {
                 output = chuckDecoder(inputText)
             } else if (selected === true && title === 'Letter Mapping') {
                 output = mapDecoder(inputText)
-            } // else if (selected === true && title === 'Multiply-Ascii') {
-            //     output = multiplyAsciiDecode(inputText)
-            // } else if (selected === true && title === 'Star and Dots') {
+            } else if (selected === true && title === 'Multiply-Ascii') {
+                output = multiplyAsciiDecode(inputText)
+            } // else if (selected === true && title === 'Star and Dots') {
             //     output = starDotDecode(inputText)
             // } else if (selected === true && title === 'Symbol') {
             //     output = symbolDecoder(inputText)
