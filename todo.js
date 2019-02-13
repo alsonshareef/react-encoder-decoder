@@ -103,7 +103,7 @@
                     
                     - Finish writing the rest of the decoding functions, and write their tests and pass into UI:
                         - Letter Mapping (COMPLETED, but could be better?)
-                        - Multiply Ascii 
+                        - Multiply Ascii (COMPLETED)
                         - Star Dot
                         - Symbol
                     - Make drop down menu to only allow one selected item at a time

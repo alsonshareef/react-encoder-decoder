@@ -27,14 +27,12 @@
         } 
 
         return binaryNum
-
     }
 
 
 
 
-// ** MAIN ENCODER FUNCTION ** //
-
+// ENCODER
 const starDotEncode = (message) => {
     // Message >> Ascii
     let asciiString = ''
@@ -62,4 +60,10 @@ const starDotEncode = (message) => {
 
 // console.log(starDotEncode('Hi, my name is Alson'))
 
-module.exports = { starDotEncode }
+
+// DECODER
+const starDotDecode = (encodedString) => {
+
+}
+
+module.exports = { starDotEncode, starDotDecode }
