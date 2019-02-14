@@ -11,15 +11,13 @@
         }
 
         for (let i = 0; i <= index; i++){
-            if (number !== 0) {
-                if (number >= operator) {
-                    binaryNum += '1'
-                    number -= operator
-                } else {
-                    binaryNum += '0'
-                }
-                operator /= 2
+            if (number >= operator) {
+                binaryNum += '1'
+                number -= operator
+            } else {
+                binaryNum += '0'
             }
+            operator /= 2
         }
         
         if (binaryNum === '') {
@@ -31,29 +29,40 @@
 
 
 
-
 // ENCODER
 const starDotEncode = (message) => {
     // Message >> Ascii
-    let asciiString = ''
+    let asciiArray = []
 
     for(let i = 0; i < message.length; i++){
-        asciiString += message[i].charCodeAt()
+        asciiArray.push(message[i].charCodeAt())
     }
 
+    console.log('message > ascii =', asciiArray)
     // Ascii >> Binary
-    let asciiInBinary = numbertoBinary(asciiString)
+    let asciiInBinary = []
 
+    for (let i = 0; i < asciiArray.length; i++) {
+        asciiInBinary.push(numbertoBinary(asciiArray[i]))
+    }
+    console.log('ascii > binary =', asciiInBinary)
     // 1's and 0's >> * and .
-    let output = ''
+    let output = []
     
     for (let i = 0; i < asciiInBinary.length; i++) {
-        if (asciiInBinary[i] === '1') {
-            output += '*'
-        } else {
-            output += '.'
+        let string = asciiInBinary[i]
+        let starAndDot = ''
+        for (let j = 0; j < string.length; j++) {
+            if (string[j] === '1') {
+                starAndDot = starAndDot + '*'
+            } else {
+                starAndDot = starAndDot + '.'
+            }
         }
+        output.push(starAndDot)
     }
+
+    output = output.join('')
 
     return output
 }
@@ -63,7 +72,26 @@ const starDotEncode = (message) => {
 
 // DECODER
 const starDotDecode = (encodedString) => {
+    /*
+        1. Turn star-dot string into binary (DONE)
+        2. Turn binary string back into concatenated ascii string
+        3. Turn ascii string back into original message
+    */
 
+    // Stars and Dots >> Binary String
+    let binaryString = ''
+    for (let i = 0; i < encodedString.length; i++) {
+        if (encodedString[i] === '*') {
+            binaryString += '1'
+        } else {
+            binaryString += '0'
+        }
+    }
+
+    // Binary String >> Ascii String
+    return binaryString
 }
+
+// console.log(starDotDecode('.*..*.....**.*..*...*.**.....*.......**.**.*..****..*...*.......**.***...**....*..**.**.*..**..*.*...*.......**.*..*..***..**...*.......*.....*..**.**....***..**..**.****..**.***..'))
 
 module.exports = { starDotEncode, starDotDecode }

@@ -1,16 +1,29 @@
-const {starDot} = require('./star-dot')
+const {starDotEncode, starDotDecode} = require('./star-dot')
 
 // **** UNIT TESTS **** //
 
-const starDotTest = () => {
+const starDotEncodeTest = () => {
     let testMessage = 'Hi, my name is Alson'
-    let expectedOutput = '*..**.*...*.**.*..****..*.*.****..*.....*..**...****'
+    let expectedOutput = '.*..*....**.*..*..*.**....*......**.**.*.****..*..*......**.***..**....*.**.**.*.**..*.*..*......**.*..*.***..**..*......*.....*.**.**...***..**.**.****.**.***.'
 
-    if (starDot(testMessage) === expectedOutput) {
-        console.log(`** PASSED ** The returned value from the 'starDot' function is EQUAL to expectedOutput`)
+    if (starDotEncode(testMessage) === expectedOutput) {
+        return `** PASSED ** The returned value from the 'starDot' function is EQUAL to expectedOutput`
     } else {
-        console.log(`** FAILED ** The returned value from the 'starDot' function is NOT EQUAL to expectedOutput`)
+        return `** FAILED ** The returned value from the 'starDot' function is NOT EQUAL to expectedOutput`
     }
 }
 
-starDotTest()
+console.log(starDotEncodeTest())
+
+const starDotDecodeTest = () => {
+    let testMessage = '.*..*....**.*..*..*.**....*......**.**.*.****..*..*......**.***..**....*.**.**.*.**..*.*..*......**.*..*.***..**..*......*.....*.**.**...***..**.**.****.**.***.'
+    let expectedOutput = 'Hi, my name is Alson'
+
+    if (starDotDecode(testMessage) === expectedOutput) {
+        return `** PASSED ** The returned value from the 'starDot' function is EQUAL to expectedOutput`
+    } else {
+        return `** FAILED ** The returned value from the 'starDot' function is NOT EQUAL to expectedOutput`
+    }
+}
+
+// console.log(starDotDecodeTest))
