@@ -102,9 +102,9 @@
                     - Write function to set selected encoder/decoder function to handleEncode and handleDecode methods (COMPLETED)
                     
                     - Finish writing the rest of the decoding functions, and write their tests and pass into UI:
-                        - Letter Mapping (COMPLETED, but could be better?)
+                        - Letter Mapping (COMPLETED)
                         - Multiply Ascii (COMPLETED)
-                        - Star Dot
+                        - Star Dot (COMPLETED)
                         - Symbol
                     - Make drop down menu to only allow one selected item at a time
                     - Try make a copy to clipboard functionality for easier UX

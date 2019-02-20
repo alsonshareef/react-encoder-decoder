@@ -79,7 +79,7 @@
         return output
     }
 
-    // console.log(starDotEncode('Hi, my name is Alson'))
+    // console.log('starDotEncode:', starDotEncode('Hi, I am Alson'))
 
 
 // DECODER
@@ -97,12 +97,12 @@
 
         // Binary String >> Binary Array
         let binaryArray = [], string = ''
-        for (let i = 0; i < binaryString.length; i++) {
-            if (string.length !== 8) {
+        for (let i = 0; i <= binaryString.length; i++) {
+            if (string.length < 8) {
                 string += binaryString[i]
             } else {
                 binaryArray.push(string)
-                string = ''
+                string = binaryString[i]
             }
         }
 
@@ -118,9 +118,11 @@
             originalMessage += String.fromCharCode(asciiArray[i])
         }
 
+        originalMessage = originalMessage.trim()
+        
         return originalMessage
     }
 
-console.log(starDotDecode('.*..*.....**.*..*...*.**.....*.......**.**.*..****..*...*.......**.***...**....*..**.**.*..**..*.*...*.......**.*..*..***..**...*.......*.....*..**.**....***..**..**.****..**.***..'))
+// console.log('starDotDecode:', starDotDecode('.*..*....**.*..*..*.**....*......*..*..*..*......**....*.**.**.*..*......*.....*.**.**...***..**.**.****.**.***.'))
 
 module.exports = { starDotEncode, starDotDecode }
