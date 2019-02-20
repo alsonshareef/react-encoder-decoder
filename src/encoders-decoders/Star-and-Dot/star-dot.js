@@ -27,6 +27,19 @@
         return binaryNum
     }
 
+// Takes a binary number and returns its number
+    const binarytoNumber = (bin) => {
+        let num = 0
+        let operator = Math.pow(2, bin.length - 1)
+        for (let i = 0; i < bin.length; i++) {
+            if (bin[i] === '1') {
+                num += operator
+            }
+            operator /= 2
+        }
+        return num
+    }
+
 
 
 // ENCODER
@@ -38,15 +51,12 @@
             asciiArray.push(message[i].charCodeAt())
         }
 
-        console.log('message > ascii =', asciiArray)
-
         // Ascii >> Binary
         let asciiInBinary = []
 
         for (let i = 0; i < asciiArray.length; i++) {
             asciiInBinary.push(numbertoBinary(asciiArray[i]))
         }
-        console.log('ascii > binary =', asciiInBinary)
         
         // Binary >> * and .
         let output = []
@@ -74,12 +84,6 @@
 
 // DECODER
     const starDotDecode = (encodedString) => {
-        /*
-            1. Turn star-dot string into binary (DONE)
-            2. Turn binary string into binary array
-            3. Turn Binary array into ascii array
-            4. Turn ascii array back into original message
-        */
 
         // Stars and Dots >> Binary String
         let binaryString = ''
@@ -103,8 +107,18 @@
         }
 
         // Binary Array >> Ascii array
-        // Ascii array >> Original Message
+        let asciiArray = []
+        for (let i = 0; i < binaryArray.length; i++) {
+            asciiArray.push(binarytoNumber(binaryArray[i]))
+        }
 
+        // Ascii array >> Original Message
+        let originalMessage = ''
+        for (let i = 0; i < asciiArray.length; i++) {
+            originalMessage += String.fromCharCode(asciiArray[i])
+        }
+
+        return originalMessage
     }
 
 console.log(starDotDecode('.*..*.....**.*..*...*.**.....*.......**.**.*..****..*...*.......**.***...**....*..**.**.*..**..*.*...*.......**.*..*..***..**...*.......*.....*..**.**....***..**..**.****..**.***..'))
