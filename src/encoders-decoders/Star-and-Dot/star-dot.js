@@ -30,68 +30,83 @@
 
 
 // ENCODER
-const starDotEncode = (message) => {
-    // Message >> Ascii
-    let asciiArray = []
+    const starDotEncode = (message) => {
+        // Message >> Ascii
+        let asciiArray = []
 
-    for(let i = 0; i < message.length; i++){
-        asciiArray.push(message[i].charCodeAt())
-    }
-
-    console.log('message > ascii =', asciiArray)
-    // Ascii >> Binary
-    let asciiInBinary = []
-
-    for (let i = 0; i < asciiArray.length; i++) {
-        asciiInBinary.push(numbertoBinary(asciiArray[i]))
-    }
-    console.log('ascii > binary =', asciiInBinary)
-    // 1's and 0's >> * and .
-    let output = []
-    
-    for (let i = 0; i < asciiInBinary.length; i++) {
-        let string = asciiInBinary[i]
-        let starAndDot = ''
-        for (let j = 0; j < string.length; j++) {
-            if (string[j] === '1') {
-                starAndDot = starAndDot + '*'
-            } else {
-                starAndDot = starAndDot + '.'
-            }
+        for(let i = 0; i < message.length; i++){
+            asciiArray.push(message[i].charCodeAt())
         }
-        output.push(starAndDot)
+
+        console.log('message > ascii =', asciiArray)
+
+        // Ascii >> Binary
+        let asciiInBinary = []
+
+        for (let i = 0; i < asciiArray.length; i++) {
+            asciiInBinary.push(numbertoBinary(asciiArray[i]))
+        }
+        console.log('ascii > binary =', asciiInBinary)
+        
+        // Binary >> * and .
+        let output = []
+        
+        for (let i = 0; i < asciiInBinary.length; i++) {
+            let string = asciiInBinary[i]
+            let starAndDot = ''
+            for (let j = 0; j < string.length; j++) {
+                if (string[j] === '1') {
+                    starAndDot += '*'
+                } else {
+                    starAndDot += '.'
+                }
+            }
+            output.push(starAndDot)
+        }
+
+        output = output.join('')
+
+        return output
     }
 
-    output = output.join('')
-
-    return output
-}
-
-// console.log(starDotEncode('Hi, my name is Alson'))
+    // console.log(starDotEncode('Hi, my name is Alson'))
 
 
 // DECODER
-const starDotDecode = (encodedString) => {
-    /*
-        1. Turn star-dot string into binary (DONE)
-        2. Turn binary string back into concatenated ascii string
-        3. Turn ascii string back into original message
-    */
+    const starDotDecode = (encodedString) => {
+        /*
+            1. Turn star-dot string into binary (DONE)
+            2. Turn binary string into binary array
+            3. Turn Binary array into ascii array
+            4. Turn ascii array back into original message
+        */
 
-    // Stars and Dots >> Binary String
-    let binaryString = ''
-    for (let i = 0; i < encodedString.length; i++) {
-        if (encodedString[i] === '*') {
-            binaryString += '1'
-        } else {
-            binaryString += '0'
+        // Stars and Dots >> Binary String
+        let binaryString = ''
+        for (let i = 0; i < encodedString.length; i++) {
+            if (encodedString[i] === '*') {
+                binaryString += '1'
+            } else {
+                binaryString += '0'
+            }
         }
+
+        // Binary String >> Binary Array
+        let binaryArray = [], string = ''
+        for (let i = 0; i < binaryString.length; i++) {
+            if (string.length !== 8) {
+                string += binaryString[i]
+            } else {
+                binaryArray.push(string)
+                string = ''
+            }
+        }
+
+        // Binary Array >> Ascii array
+        // Ascii array >> Original Message
+
     }
 
-    // Binary String >> Ascii String
-    return binaryString
-}
-
-// console.log(starDotDecode('.*..*.....**.*..*...*.**.....*.......**.**.*..****..*...*.......**.***...**....*..**.**.*..**..*.*...*.......**.*..*..***..**...*.......*.....*..**.**....***..**..**.****..**.***..'))
+console.log(starDotDecode('.*..*.....**.*..*...*.**.....*.......**.**.*..****..*...*.......**.***...**....*..**.**.*..**..*.*...*.......**.*..*..***..**...*.......*.....*..**.**....***..**..**.****..**.***..'))
 
 module.exports = { starDotEncode, starDotDecode }
