@@ -40,6 +40,31 @@
         return num
     }
 
+// Takes a binary number and returns a binary array
+    const convertBinarytoByteArray = (bin) => {
+        let output = []
+        let binArray = bin.split('')
+        let iterations = binArray.length
+
+        for(let i = 0; i < iterations / 8; i++){
+            if (binArray.length > 8) {
+                let index = binArray.length - 8
+                output.push(binArray.splice(index, 8).join(''))
+            } 
+        }
+
+        let size = 8 - binArray.length
+        let binOut = binArray.join('')
+
+        for(let i = 0; i < size; i++){
+            binOut = '0' + binOut
+        }
+
+        output.push(binOut)
+
+        return output.reverse()
+    }
+
 
 
 // ENCODER
@@ -96,15 +121,7 @@
         }
 
         // Binary String >> Binary Array
-        let binaryArray = [], string = ''
-        for (let i = 0; i <= binaryString.length; i++) {
-            if (string.length < 8) {
-                string += binaryString[i]
-            } else {
-                binaryArray.push(string)
-                string = binaryString[i]
-            }
-        }
+        let binaryArray = convertBinarytoByteArray(binaryString)
 
         // Binary Array >> Ascii array
         let asciiArray = []
@@ -123,6 +140,6 @@
         return originalMessage
     }
 
-// console.log('starDotDecode:', starDotDecode('.*..*....**.*..*..*.**....*......*..*..*..*......**....*.**.**.*..*......*.....*.**.**...***..**.**.****.**.***.'))
+console.log('starDotDecode:', starDotDecode('.*..*....**.*..*..*.**....*......*..*..*..*......**....*.**.**.*..*......*.....*.**.**...***..**.**.****.**.***.'))
 
 module.exports = { starDotEncode, starDotDecode }

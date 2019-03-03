@@ -117,4 +117,13 @@ const symbolEncoder = (message) => {
 
 // console.log(symbolEncoder('Hey my name is Alson'))
 
+
+
+// ** MAIN DECODER FUNCTION ** //
+const symbolDecoder = (encodedString) => {
+
+}
+
+// console.log(symbolDecoder)
+
 module.exports = {symbolEncoder}

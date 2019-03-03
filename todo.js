@@ -104,7 +104,7 @@
                     - Finish writing the rest of the decoding functions, and write their tests and pass into UI:
                         - Letter Mapping (COMPLETED)
                         - Multiply Ascii (COMPLETED)
-                        - Star Dot (COMPLETED)
+                        - Star Dot (COMPLETED, look at how binary array is created in decoder)
                         - Symbol
                     - Make drop down menu to only allow one selected item at a time
                     - Try make a copy to clipboard functionality for easier UX
