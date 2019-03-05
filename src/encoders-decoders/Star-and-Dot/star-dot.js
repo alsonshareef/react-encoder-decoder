@@ -140,6 +140,6 @@
         return originalMessage
     }
 
-console.log('starDotDecode:', starDotDecode('.*..*....**.*..*..*.**....*......*..*..*..*......**....*.**.**.*..*......*.....*.**.**...***..**.**.****.**.***.'))
+// console.log('starDotDecode:', starDotDecode('.*..*....**.*..*..*.**....*......*..*..*..*......**....*.**.**.*..*......*.....*.**.**...***..**.**.****.**.***.'))
 
 module.exports = { starDotEncode, starDotDecode }

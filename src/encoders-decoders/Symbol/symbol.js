@@ -1,5 +1,5 @@
-let RLMKey = require('./RLM-key')
-let symbolKey = require('./Symbol-key')
+let { RLMencode, RLMdecode } = require('./RLM-key')
+let { symbolEncode, symbolDecode } = require('./Symbol-key')
 
 // RELEVANT FUNCTIONS FOR SYMBOL ENCODER FUNCTION
     // Generates random letter string based on passed in message
@@ -7,7 +7,7 @@ let symbolKey = require('./Symbol-key')
             let output = ''
 
             for(let i = 0; i < message.length; i++){
-                output += RLMKey[message[i]]
+                output += RLMencode[message[i]]
             }
 
             return output
@@ -21,7 +21,6 @@ let symbolKey = require('./Symbol-key')
                 let num = Math.floor(ascii * (Math.PI/Math.sqrt(64)))
                 output.push(num)
             }
-            output = output.join('')
             return output
         }
     
@@ -86,7 +85,7 @@ let symbolKey = require('./Symbol-key')
             let output = ''
 
             for(let i = 0; i < binArray.length; i++){
-                output += symbolKey[binArray[i]]
+                output += symbolEncode[binArray[i]]
             }
 
             return output
@@ -104,26 +103,44 @@ const symbolEncoder = (message) => {
         let multipliedAscii = multiplyAscii(randomLetters)
 
     // Multiplied Ascii Number >> Binary 
-        let asciiBinaryNum = convertNumberToBinary(multipliedAscii)
+        let asciiBinaryNum = []
+
+        for (let i = 0; i < multipliedAscii.length; i++) {
+            asciiBinaryNum.push(convertNumberToBinary(multipliedAscii[i]))
+        }
+        
+        asciiBinaryNum = asciiBinaryNum.join('')
 
     // Binary >> Binary Array of strings at length of 4
         let asciiBinArray = convertBinarytoBinaryArray(asciiBinaryNum)
-        // console.log(asciiBinArray)
-    // Binary >> Symbol
+
+    // Binary Array >> Symbol
         let symbolEncoded = encodeToSymbol(asciiBinArray)
     
     return symbolEncoded
 }
 
-// console.log(symbolEncoder('Hey my name is Alson'))
+console.log(symbolEncoder('Hey my name is Alson'))
 
 
 
 // ** MAIN DECODER FUNCTION ** //
 const symbolDecoder = (encodedString) => {
+    // Symbol >> Binary String
+        let binaryString = []
+        for (let i = 0; i < encodedString.length; i++) {
+            binaryString.unshift(symbolDecode[encodedString[i]])
+        }
+        console.log(binaryString.join(''))
+
+    // Binary String >> Ascii String
+
+    // Ascii String >> Random Letters
+
+    // Random letters >> Original Message
 
 }
 
-// console.log(symbolDecoder)
+// console.log(symbolDecoder('^_%^_^}$&(_+^&(*)$)^)#$+%}%&()+-+@'))
 
 module.exports = {symbolEncoder}

@@ -3,7 +3,7 @@ const { chuckEncoder, chuckDecoder } = require('../encoders-decoders/Chuck Norri
 const { mapEncoder, mapDecoder } = require('../encoders-decoders/Letter Mapping/lettermapping')
 const { multiplyAsciiEncode, multiplyAsciiDecode } = require('../encoders-decoders/Multiply-Ascii/multiply-ascii')
 const { starDotEncode, starDotDecode } = require('../encoders-decoders/Star-and-Dot/star-dot')
-const { symbolEncoder } = require('../encoders-decoders/Symbol/symbol-encoder')
+const { symbolEncoder } = require('../encoders-decoders/Symbol/symbol')
 
 
 // *** SELECTING FUNCTION *** //
